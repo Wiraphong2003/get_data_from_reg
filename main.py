@@ -1,12 +1,11 @@
 import requests
 from bs4 import  BeautifulSoup
 
-url = "https://www.sfcinemacity.com/movies"
+url = "http://reg.msu.ac.th/registrar/class_info_1.asp?avs792046395=17&backto=home"
 webdata = requests.get(url)
 print(webdata)
 soup = BeautifulSoup(webdata.text,'html.parser')
-print(soup)
-find_word = soup.find_all("div",{"class":"movie-card flex-item"})
+find_word = soup.find_all("table",{"class":"normalDetail"})
 for i in find_word:
     print(i)
 
